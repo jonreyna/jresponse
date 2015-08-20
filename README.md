@@ -1,5 +1,4 @@
-JResponse: Encapsulates responses for various commands
-executed on Juniper devices via NETCONF.
+JResponse: Encapsulates responses for various commands executed on Juniper devices via NETCONF.
 ===============================================
 
 - [Intro](#intro)

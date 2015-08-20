@@ -1,0 +1,106 @@
+{
+  "route-table": {
+    "table-name": "inet.0",
+    "destination-count": 565525,
+    "total-route-count": 4400004,
+    "active-route-count": 565520,
+    "holddown-route-count": 0,
+    "hidden-route-count": 14,
+    "rt": [
+      {
+        "rt-destination": "8.8.8.0/24",
+        "rt-entry": [
+          {
+            "active-date": "*",
+            "protocol-name": "BGP",
+            "preference": 170,
+            "age": {
+              "age-seconds": "585128",
+              "age": "6d 18:32:08"
+            },
+            "local-preference": 130,
+            "learned-from": "206.126.239.251",
+            "as-path": "15169 I",
+            "validation-state": "unverified",
+            "nh": [
+              {
+                "selected-next-hop": "",
+                "to": "206.126.236.21",
+                "via": "ae0.0"
+              }
+            ]
+          },
+          {
+            "protocol-name": "BGP",
+            "preference": 170,
+            "age": {
+              "age-seconds": "585128",
+              "age": "6d 18:32:08"
+            },
+            "local-preference": 130,
+            "learned-from": "206.126.239.252",
+            "as-path": "15169 I",
+            "validation-state": "unverified",
+            "nh": [
+              {
+                "selected-next-hop": "",
+                "to": "206.126.236.21",
+                "via": "ae0.0"
+              }
+            ]
+          },
+          {
+            "protocol-name": "BGP",
+            "preference": 170,
+            "age": {
+              "age-seconds": "762247",
+              "age": "1w1d 19:44:07"
+            },
+            "local-preference": 130,
+            "learned-from": "76.73.165.1",
+            "as-path": "15169 I",
+            "validation-state": "unverified",
+            "nh": [
+              {
+                "selected-next-hop": null,
+                "to": "24.236.73.12",
+                "via": "ae5.0",
+                "lsp-name": "VAASHBPO1EDGJ01\u003e\u003eOHIOLAHUHEDGJ01-ECMP1"
+              },
+              {
+                "selected-next-hop": "",
+                "to": "24.236.73.12",
+                "via": "ae5.0",
+                "lsp-name": "VAASHBPO1EDGJ01\u003e\u003eOHIOLAHUHEDGJ01-ECMP2"
+              },
+              {
+                "selected-next-hop": null,
+                "to": "24.236.73.12",
+                "via": "ae5.0",
+                "lsp-name": "VAASHBPO1EDGJ01\u003e\u003eOHIOLAHUHEDGJ01-ECMP3"
+              },
+              {
+                "selected-next-hop": null,
+                "to": "69.73.0.136",
+                "via": "ae4.0",
+                "lsp-name": "VAASHBPO1EDGJ01\u003e\u003eOHIOLAHUHEDGJ01-ECMP1"
+              },
+              {
+                "selected-next-hop": null,
+                "to": "69.73.0.136",
+                "via": "ae4.0",
+                "lsp-name": "VAASHBPO1EDGJ01\u003e\u003eOHIOLAHUHEDGJ01-ECMP2"
+              },
+              {
+                "selected-next-hop": null,
+                "to": "69.73.0.136",
+                "via": "ae4.0",
+                "lsp-name": "VAASHBPO1EDGJ01\u003e\u003eOHIOLAHUHEDGJ01-ECMP3"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

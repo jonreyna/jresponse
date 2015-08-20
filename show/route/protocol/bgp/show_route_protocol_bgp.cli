@@ -1,0 +1,18 @@
+inet.0: 565525 destinations, 4400004 routes (565520, 0 holddown, 14 hidden)
+@ = Routing Use Only, # = Forwarding Use Only
++ = Active Route, - = Last Active, * = Both
+
+8.8.8.0/24      *[BGP/170] 6d 18:32:08, MED 0, localpref 130, from 206.126.239.251
+                  AS path: 15169 I, validation-state: unverified
+                > to 206.126.236.21 via ae0.0
+                [BGP/170] 6d 18:32:08, MED 0, localpref 130, from 206.126.239.252
+                  AS path: 15169 I, validation-state: unverified
+                > to 206.126.236.21 via ae0.0
+                [BGP/170] 1w1d 19:44:07, MED 0, localpref 130, from 76.73.165.1
+                  AS path: 15169 I, validation-state: unverified
+                  to 24.236.73.12 via ae5.0, label-switched-path VAASHBPO1EDGJ01>>OHIOLAHUHEDGJ01-ECMP1
+                > to 24.236.73.12 via ae5.0, label-switched-path VAASHBPO1EDGJ01>>OHIOLAHUHEDGJ01-ECMP2
+                  to 24.236.73.12 via ae5.0, label-switched-path VAASHBPO1EDGJ01>>OHIOLAHUHEDGJ01-ECMP3
+                  to 69.73.0.136 via ae4.0, label-switched-path VAASHBPO1EDGJ01>>OHIOLAHUHEDGJ01-ECMP1
+                  to 69.73.0.136 via ae4.0, label-switched-path VAASHBPO1EDGJ01>>OHIOLAHUHEDGJ01-ECMP2
+                  to 69.73.0.136 via ae4.0, label-switched-path VAASHBPO1EDGJ01>>OHIOLAHUHEDGJ01-ECMP3

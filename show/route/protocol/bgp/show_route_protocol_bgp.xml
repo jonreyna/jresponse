@@ -1,0 +1,89 @@
+<route-information xmlns="http://xml.juniper.net/junos/12.3R6/junos-routing">
+    <route-table>
+        <table-name>inet.0</table-name>
+        <destination-count>565525</destination-count>
+        <total-route-count>4400004</total-route-count>
+        <active-route-count>565520</active-route-count>
+        <holddown-route-count>0</holddown-route-count>
+        <hidden-route-count>14</hidden-route-count>
+        <rt junos:style="brief-mpls-fwd">
+            <rt-destination>8.8.8.0/24</rt-destination>
+            <rt-entry>
+                <active-tag>*</active-tag>
+                <current-active/>
+                <last-active/>
+                <protocol-name>BGP</protocol-name>
+                <preference>170</preference>
+                <age junos:seconds="585128">6d 18:32:08</age>
+                <med>0</med>
+                <local-preference>130</local-preference>
+                <learned-from>206.126.239.251</learned-from>
+                <as-path>15169 I</as-path>
+                <validation-state>unverified</validation-state>
+                <nh>
+                    <selected-next-hop/>
+                    <to>206.126.236.21</to>
+                    <via>ae0.0</via>
+                </nh>
+            </rt-entry>
+            <rt-entry>
+                <active-tag></active-tag>
+                <protocol-name>BGP</protocol-name>
+                <preference>170</preference>
+                <age junos:seconds="585128">6d 18:32:08</age>
+                <med>0</med>
+                <local-preference>130</local-preference>
+                <learned-from>206.126.239.252</learned-from>
+                <as-path>15169 I</as-path>
+                <validation-state>unverified</validation-state>
+                <nh>
+                    <selected-next-hop/>
+                    <to>206.126.236.21</to>
+                    <via>ae0.0</via>
+                </nh>
+            </rt-entry>
+            <rt-entry>
+                <active-tag></active-tag>
+                <protocol-name>BGP</protocol-name>
+                <preference>170</preference>
+                <age junos:seconds="762247">1w1d 19:44:07</age>
+                <med>0</med>
+                <local-preference>130</local-preference>
+                <learned-from>76.73.165.1</learned-from>
+                <as-path>15169 I</as-path>
+                <validation-state>unverified</validation-state>
+                <nh>
+                    <to>24.236.73.12</to>
+                    <via>ae5.0</via>
+                    <lsp-name>VAASHBPO1EDGJ01&gt;&gt;OHIOLAHUHEDGJ01-ECMP1</lsp-name>
+                </nh>
+                <nh>
+                    <selected-next-hop/>
+                    <to>24.236.73.12</to>
+                    <via>ae5.0</via>
+                    <lsp-name>VAASHBPO1EDGJ01&gt;&gt;OHIOLAHUHEDGJ01-ECMP2</lsp-name>
+                </nh>
+                <nh>
+                    <to>24.236.73.12</to>
+                    <via>ae5.0</via>
+                    <lsp-name>VAASHBPO1EDGJ01&gt;&gt;OHIOLAHUHEDGJ01-ECMP3</lsp-name>
+                </nh>
+                <nh>
+                    <to>69.73.0.136</to>
+                    <via>ae4.0</via>
+                    <lsp-name>VAASHBPO1EDGJ01&gt;&gt;OHIOLAHUHEDGJ01-ECMP1</lsp-name>
+                </nh>
+                <nh>
+                    <to>69.73.0.136</to>
+                    <via>ae4.0</via>
+                    <lsp-name>VAASHBPO1EDGJ01&gt;&gt;OHIOLAHUHEDGJ01-ECMP2</lsp-name>
+                </nh>
+                <nh>
+                    <to>69.73.0.136</to>
+                    <via>ae4.0</via>
+                    <lsp-name>VAASHBPO1EDGJ01&gt;&gt;OHIOLAHUHEDGJ01-ECMP3</lsp-name>
+                </nh>
+            </rt-entry>
+        </rt>
+    </route-table>
+</route-information>

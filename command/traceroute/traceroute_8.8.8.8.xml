@@ -1,0 +1,51 @@
+<traceroute-results xmlns="http://xml.juniper.net/junos/12.1X46/junos-probe-tests">
+    <target-host>8.8.8.8</target-host>
+    <target-ip>8.8.8.8</target-ip>
+    <max-hop-index>30</max-hop-index>
+    <packet-size>40</packet-size>
+    <hop>
+        <ttl-value>1</ttl-value>
+        <last-ip-address>10.226.0.1</last-ip-address>
+        <last-host-name>10.226.0.1</last-host-name>
+        <probe-result date-determined="1439961690">
+            <probe-index>1</probe-index>
+            <ip-address>10.226.0.1</ip-address>
+            <host-name>10.226.0.1</host-name>
+            <icmp-type integer-type-value="11">
+                <icmp-timxceed/>
+            </icmp-type>
+            <icmp-code integer-code-value="0">
+                <icmp-timxceed-intrans/>
+            </icmp-code>
+            <rtt>13876</rtt>
+            <probe-success/>
+        </probe-result>
+        <probe-result date-determined="1439961690">
+            <probe-index>2</probe-index>
+            <ip-address>10.226.0.1</ip-address>
+            <host-name>10.226.0.1</host-name>
+            <icmp-type integer-type-value="11">
+                <icmp-timxceed/>
+            </icmp-type>
+            <icmp-code integer-code-value="0">
+                <icmp-timxceed-intrans/>
+            </icmp-code>
+            <rtt>11752</rtt>
+            <probe-success/>
+        </probe-result>
+        <probe-result date-determined="1439961690">
+            <probe-index>3</probe-index>
+            <ip-address>10.226.0.1</ip-address>
+            <host-name>10.226.0.1</host-name>
+            <icmp-type integer-type-value="11">
+                <icmp-timxceed/>
+            </icmp-type>
+            <icmp-code integer-code-value="0">
+                <icmp-timxceed-intrans/>
+            </icmp-code>
+            <rtt>10973</rtt>
+            <probe-success/>
+        </probe-result>
+    </hop>
+    <traceroute-success/>
+</traceroute-results>

@@ -1,0 +1,11 @@
+<rpc-reply xmlns:junos="http://xml.juniper.net/junos/12.3R6/junos">
+    <rpc>
+        <get-route-information>
+                <destination>8.8.8.8</destination>
+                <protocol>bgp</protocol>
+        </get-route-information>
+         </rpc>
+        <cli>
+            <banner>{master}</banner>
+        </cli>
+    </rpc-reply>

@@ -1,0 +1,39 @@
+{
+  "target-host": "8.8.8.8",
+  "target-ip": "8.8.8.8",
+  "max-hop-index": 30,
+  "packet-size": 40,
+  "hop": [
+    {
+      "ttl-value": 1,
+      "last-ip-address": "10.226.0.1",
+      "last-host-name": "10.226.0.1",
+      "probe-result": [
+        {
+          "date-determined": 1439961690,
+          "probe-index": 1,
+          "ip-address": "10.226.0.1",
+          "host-name": "10.226.0.1",
+          "probe-success": "",
+          "rtt": 26792
+        },
+        {
+          "date-determined": 1439961690,
+          "probe-index": 2,
+          "ip-address": "10.226.0.1",
+          "host-name": "10.226.0.1",
+          "probe-success": "",
+          "rtt": 14184
+        },
+        {
+          "date-determined": 1439961690,
+          "probe-index": 3,
+          "ip-address": "10.226.0.1",
+          "host-name": "10.226.0.1",
+          "probe-success": "",
+          "rtt": 15821
+        }
+      ]
+    }
+  ]
+}

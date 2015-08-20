@@ -1,0 +1,2 @@
+traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 40 byte packets
+ 1  10.226.0.1 (10.226.0.1)  13.876 ms  11.752 ms  10.973 ms

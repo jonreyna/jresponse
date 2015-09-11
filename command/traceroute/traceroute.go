@@ -18,7 +18,7 @@ const traceRouteTmplStr = "traceroute to {{ .TargetHost }} " +
 	"({{ .TargetIP }}), {{ .MaxHopIndex }} hops max, {{ .PacketSize }} byte packets\n" +
 
 	"{{range $i, $element := .Hops }} " +
-	"{{.TTLValue}}  {{ .TrimmedLastHostName }} ({{ .LastIPAddr }}) " +
+	"{{.TTLValue}}  {{ .TrimmedLastHostName }} ({{ .LastIPAddr }})  " +
 	"{{ range $_, $probeResult := .ProbeResult }}{{ formatAsMs $probeResult.RTT }} ms  " +
 	"{{end}}\n{{end}}"
 

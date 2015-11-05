@@ -33,6 +33,7 @@ func init() {
 const bgpRouteTmplStr = "{{.RouteTable.TableName}}: {{.RouteTable.DestinationCount}} destinations, " +
 "{{.RouteTable.TotalRouteCount}} routes ({{.RouteTable.ActiveRouteCount}}, " +
 "{{.RouteTable.HoldDownRouteCount}} holddown, {{.RouteTable.HiddenRouteCount}} hidden)\n" +
+"{{ if .RouteTable.RT }}" +
 "@ = Routing Use Only, # = Forwarding Use Only\n" +
 "+ = Active Route, - = Last Active, * = Both\n\n" +
 
@@ -51,7 +52,7 @@ const bgpRouteTmplStr = "{{.RouteTable.TableName}}: {{.RouteTable.DestinationCou
 "                {{isNextHop $nh.SelectedNextHop}} to {{$nh.To}} via {{$nh.Via}}" +
 "{{if eq $nh.LSPName \"\"}}{{else}}, label-switched-path {{$nh.LSPName}}{{end}}\n" +
 
-"{{end}}{{end}}{{end}}"
+"{{end}}{{end}}{{end}}{{end}}"
 
 func isNextHop(nextHopInd *string) string {
 	switch nextHopInd {

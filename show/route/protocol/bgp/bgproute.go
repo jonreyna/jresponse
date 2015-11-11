@@ -111,6 +111,8 @@ type RouteTable struct {
 type BGPRoute struct {
 	XMLName    xml.Name   `xml:"route-information"     json:"-"`
 	RouteTable RouteTable `xml:"route-table,omitempty" json:"route-table,omitempty"`
+	OriginHost        string `json:"originhost,omitempty"`
+	OriginIP          string `json:"originip,omitempty"`	
 }
 
 func (bgpRoute *BGPRoute) WriteXMLTo(w io.Writer) (n int64, err error) {

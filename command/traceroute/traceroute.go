@@ -89,6 +89,8 @@ type TraceRoute struct {
 	PacketSize        uint     `xml:"packet-size,omitempty"        json:"packet-size,omitempty"`
 	Hops              []Hop    `xml:"hop,omitempty"                json:"hop,omitempty"`
 	TraceRouteFailure string   `xml:"traceroute-failure,omitempty" json:"traceroute-failure,omitempty"`
+	OriginHost        string `json:"originhost,omitempty"` 
+	OriginIP          string `json:"originip,omitempty"`
 }
 
 func (traceRoute *TraceRoute) WriteXMLTo(w io.Writer) (n int64, err error) {

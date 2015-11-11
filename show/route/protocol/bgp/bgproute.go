@@ -125,7 +125,7 @@ type BGPRoute struct {
 	OriginHost        string `json:"originhost,omitempty"`
 	OriginIP          string `json:"originip,omitempty"`	
 }
-}
+
 
 func (bgpRoute *BGPRoute) WriteXMLTo(w io.Writer) (n int64, err error) {
 	if s, err := xml.Marshal(bgpRoute); err != nil {

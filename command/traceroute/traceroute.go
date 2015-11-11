@@ -82,15 +82,25 @@ func (h *Hop) TrimmedLastHostName() string {
 // Represents the trace route XML structure, and is used to convert it
 // from XML to JSON.
 type TraceRoute struct {
-	XMLName           xml.Name `xml:"traceroute-results,omitempty" json:"-"`
-	TargetHost        string   `xml:"target-host,omitempty"        json:"target-host,omitempty"`
-	TargetIP          string   `xml:"target-ip,omitempty"          json:"target-ip,omitempty"`
-	MaxHopIndex       uint     `xml:"max-hop-index,omitempty"      json:"max-hop-index,omitempty"`
-	PacketSize        uint     `xml:"packet-size,omitempty"        json:"packet-size,omitempty"`
-	Hops              []Hop    `xml:"hop,omitempty"                json:"hop,omitempty"`
-	TraceRouteFailure string   `xml:"traceroute-failure,omitempty" json:"traceroute-failure,omitempty"`
+	XMLName           xml.Name   `xml:"traceroute-results,omitempty" json:"-"`
+	TargetHost        string     `xml:"target-host,omitempty"        json:"target-host,omitempty"`
+	TargetIP          string     `xml:"target-ip,omitempty"          json:"target-ip,omitempty"`
+	MaxHopIndex       uint       `xml:"max-hop-index,omitempty"      json:"max-hop-index,omitempty"`
+	PacketSize        uint       `xml:"packet-size,omitempty"        json:"packet-size,omitempty"`
+	Hops              []Hop      `xml:"hop,omitempty"                json:"hop,omitempty"`
+	Errors            []RPCError `xml:"rpc-error,omitempty"          json:"rpc-error,omitempty"`
+	TraceRouteFailure string     `xml:"traceroute-failure,omitempty" json:"traceroute-failure,omitempty"`
 	OriginHost        string `json:"originhost,omitempty"` 
-	OriginIP          string `json:"originip,omitempty"`
+	OriginIP          string `json:"originip,omitempty"`		
+}
+
+type RPCError struct {
+	Type     string `xml:"error-type"     json:"error-type"`
+	Tag      string `xml:"error-tag"      json:"error-tag"`
+	Severity string `xml:"error-severity" json:"error-severity"`
+	Path     string `xml:"error-path"     json:"error-path"`
+	Message  string `xml:"error-message"  json:"error-message"`
+	Info     string `xml:",innerxml"      json:",string`
 }
 
 func (traceRoute *TraceRoute) WriteXMLTo(w io.Writer) (n int64, err error) {

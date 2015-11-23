@@ -13,9 +13,9 @@ var (
 )
 
 const (
-	TRACE_ROUTE_XML_FILE  = "traceroute_8.8.8.8.xml"
-	TRACE_ROUTE_JSON_FILE = "traceroute_8.8.8.8.json"
-	TRACE_ROUTE_CLIE_FILE = "traceroute_8.8.8.8.cli"
+	traceRouteXMLFile  = "traceroute_8.8.8.8.xml"
+	traceRouteJSONFile = "traceroute_8.8.8.8.json"
+	traceRouteCLIFile  = "traceroute_8.8.8.8.cli"
 )
 
 func initTraceRouteModel() {
@@ -112,7 +112,7 @@ func TestReadXMLFrom(t *testing.T) {
 
 	tr := new(TraceRoute)
 
-	if file, err := os.Open(TRACE_ROUTE_XML_FILE); err != nil {
+	if file, err := os.Open(traceRouteXMLFile); err != nil {
 		t.Error(err)
 	} else if _, err := tr.ReadXMLFrom(file); err != nil {
 		t.Error(err)
@@ -127,7 +127,7 @@ func TestReadJSONFrom(t *testing.T) {
 
 	tr := new(TraceRoute)
 
-	if file, err := os.Open(TRACE_ROUTE_JSON_FILE); err != nil {
+	if file, err := os.Open(traceRouteJSONFile); err != nil {
 		t.Error(err)
 	} else if _, err := tr.ReadJSONFrom(file); err != nil {
 		t.Error(err)
@@ -145,7 +145,7 @@ func TestWriteCLITo(t *testing.T) {
 	}
 
 	fileBuf := bytes.Buffer{}
-	if file, err := os.Open(TRACE_ROUTE_CLIE_FILE); err != nil {
+	if file, err := os.Open(traceRouteCLIFile); err != nil {
 		t.Error(err)
 	} else if _, err := fileBuf.ReadFrom(file); err != nil {
 		t.Error(err)
@@ -186,7 +186,7 @@ func TestWriteXMLTo(t *testing.T) {
 	}
 
 	fileBuf := bytes.Buffer{}
-	if file, err := os.Open(TRACE_ROUTE_XML_FILE); err != nil {
+	if file, err := os.Open(traceRouteXMLFile); err != nil {
 		t.Error(err)
 	} else if _, err := fileBuf.ReadFrom(file); err != nil {
 		t.Error(err)
@@ -212,7 +212,7 @@ func TestWriteJSONTo(t *testing.T) {
 	}
 
 	fileBuf := bytes.Buffer{}
-	if file, err := os.Open(TRACE_ROUTE_JSON_FILE); err != nil {
+	if file, err := os.Open(traceRouteJSONFile); err != nil {
 		t.Error(err)
 	} else if _, err := fileBuf.ReadFrom(file); err != nil {
 		t.Error(err)

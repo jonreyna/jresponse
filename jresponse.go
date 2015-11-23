@@ -4,18 +4,18 @@ import (
 	"io"
 )
 
-type JResponseWriter interface {
+type Writer interface {
 	WriteXMLTo(w io.Writer) (n int64, err error)
 	WriteJSONTo(w io.Writer) (n int64, err error)
 	WriteCLITo(w io.Writer) error
 }
 
-type JResponseReader interface {
+type Reader interface {
 	ReadXMLFrom(r io.Reader) (n int64, err error)
 	ReadJSONFrom(r io.Reader) (n int64, err error)
 }
 
 type ResponseReaderWriter interface {
-	JResponseReader
-	JResponseWriter
+	Reader
+	Writer
 }

@@ -23,36 +23,36 @@ func init() {
 
 	var err error
 	if bgpRouteTmpl, err = tmpl.
-	New("bgpRouteTmpl").
-	Funcs(fmtFuncMap).
-	Parse(bgpRouteTmplStr); err != nil {
+		New("bgpRouteTmpl").
+		Funcs(fmtFuncMap).
+		Parse(bgpRouteTmplStr); err != nil {
 		cntxLog.Fatalln(err)
 	}
 }
 
 const bgpRouteTmplStr = "{{.RouteTable.TableName}}: {{.RouteTable.DestinationCount}} destinations, " +
-"{{.RouteTable.TotalRouteCount}} routes ({{.RouteTable.ActiveRouteCount}}, " +
-"{{.RouteTable.HoldDownRouteCount}} holddown, {{.RouteTable.HiddenRouteCount}} hidden)\n" +
-"{{ if .RouteTable.RT }}" +
-"@ = Routing Use Only, # = Forwarding Use Only\n" +
-"+ = Active Route, - = Last Active, * = Both\n\n" +
+	"{{.RouteTable.TotalRouteCount}} routes ({{.RouteTable.ActiveRouteCount}}, " +
+	"{{.RouteTable.HoldDownRouteCount}} holddown, {{.RouteTable.HiddenRouteCount}} hidden)\n" +
+	"{{ if .RouteTable.RT }}" +
+	"@ = Routing Use Only, # = Forwarding Use Only\n" +
+	"+ = Active Route, - = Last Active, * = Both\n\n" +
 
-"{{range $_, $rt := .RouteTable.RT}}" +
-"{{$rt.RTDestination}}" +
+	"{{range $_, $rt := .RouteTable.RT}}" +
+	"{{$rt.RTDestination}}" +
 
-"{{range $i, $rtEntry := $rt.RTEntry}}" +
-"{{if eq $i 0}}      {{else}}                {{end}}{{$rtEntry.ActiveTag}}" +
-"[{{$rtEntry.ProtocolName}}/{{$rtEntry.Preference}}] {{$rtEntry.Age.AgeTime}}, " +
-"MED {{$rtEntry.Med}}, localpref {{$rtEntry.LocalPreference}}, " +
-"from {{$rtEntry.LearnedFrom}}\n" +
-"                  AS path: {{$rtEntry.AsPath}}, " +
-"validation-state: {{$rtEntry.ValidationState}}\n" +
+	"{{range $i, $rtEntry := $rt.RTEntry}}" +
+	"{{if eq $i 0}}      {{else}}                {{end}}{{$rtEntry.ActiveTag}}" +
+	"[{{$rtEntry.ProtocolName}}/{{$rtEntry.Preference}}] {{$rtEntry.Age.AgeTime}}, " +
+	"MED {{$rtEntry.Med}}, localpref {{$rtEntry.LocalPreference}}, " +
+	"from {{$rtEntry.LearnedFrom}}\n" +
+	"                  AS path: {{$rtEntry.AsPath}}, " +
+	"validation-state: {{$rtEntry.ValidationState}}\n" +
 
-"{{range $_, $nh := $rtEntry.NH}}" +
-"                {{isNextHop $nh.SelectedNextHop}} to {{$nh.To}} via {{$nh.Via}}" +
-"{{if eq $nh.LSPName \"\"}}{{else}}, label-switched-path {{$nh.LSPName}}{{end}}\n" +
+	"{{range $_, $nh := $rtEntry.NH}}" +
+	"                {{isNextHop $nh.SelectedNextHop}} to {{$nh.To}} via {{$nh.Via}}" +
+	"{{if eq $nh.LSPName \"\"}}{{else}}, label-switched-path {{$nh.LSPName}}{{end}}\n" +
 
-"{{end}}{{end}}{{end}}{{end}}"
+	"{{end}}{{end}}{{end}}{{end}}"
 
 func isNextHop(nextHopInd *string) string {
 	switch nextHopInd {
@@ -98,13 +98,13 @@ type RT struct {
 }
 
 type RouteTable struct {
-	TableName          string     `xml:"table-name,omitempty"           json:"table-name,omitempty"`
-	DestinationCount   int        `xml:"destination-count,omitempty"    json:"destination-count,omitempty"`
-	TotalRouteCount    int        `xml:"total-route-count,omitempty"    json:"total-route-count,omitempty"`
-	ActiveRouteCount   int        `xml:"active-route-count,omitempty"   json:"active-route-count,omitempty"`
-	HoldDownRouteCount int        `xml:"holddown-route-count"           json:"holddown-route-count"`
-	HiddenRouteCount   int        `xml:"hidden-route-count,omitempty"   json:"hidden-route-count,omitempty"`
-	RT                 []RT       `xml:"rt,omitempty"                   json:"rt,omitempty"`
+	TableName          string `xml:"table-name,omitempty"           json:"table-name,omitempty"`
+	DestinationCount   int    `xml:"destination-count,omitempty"    json:"destination-count,omitempty"`
+	TotalRouteCount    int    `xml:"total-route-count,omitempty"    json:"total-route-count,omitempty"`
+	ActiveRouteCount   int    `xml:"active-route-count,omitempty"   json:"active-route-count,omitempty"`
+	HoldDownRouteCount int    `xml:"holddown-route-count"           json:"holddown-route-count"`
+	HiddenRouteCount   int    `xml:"hidden-route-count,omitempty"   json:"hidden-route-count,omitempty"`
+	RT                 []RT   `xml:"rt,omitempty"                   json:"rt,omitempty"`
 }
 
 type RPCError struct {
@@ -122,10 +122,9 @@ type BGPRoute struct {
 	XMLName    xml.Name   `xml:"route-information"     json:"-"`
 	RouteTable RouteTable `xml:"route-table,omitempty" json:"route-table,omitempty"`
 	Errors     []RPCError `xml:"rpc-error,omitempty"   json:"rpc-error,omitempty"`
-	OriginHost        string `json:"originhost,omitempty"`
-	OriginIP          string `json:"originip,omitempty"`	
+	OriginHost string     `json:"originhost,omitempty"`
+	OriginIP   string     `json:"originip,omitempty"`
 }
-
 
 func (bgpRoute *BGPRoute) WriteXMLTo(w io.Writer) (n int64, err error) {
 	if s, err := xml.Marshal(bgpRoute); err != nil {

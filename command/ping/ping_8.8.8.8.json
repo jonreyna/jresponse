@@ -1,0 +1,67 @@
+{
+  "target-host": "8.8.8.8",
+  "target-ip": "8.8.8.8",
+  "max-hop-index": 30,
+  "packet-size": 40,
+      "probe-result": [
+        {
+          "date-determined": 1439961690,
+          "probe-index": 1,
+          "sequence-number": 0,    
+          "time-to-live": 62,     
+          "response-size": 1208,
+          "ip-address": "8.8.8.8",
+          "probe-success": "",
+          "rtt": 690
+        },
+        {
+          "date-determined": 1439961690,
+          "probe-index": 2,
+          "sequence-number": 1,    
+          "time-to-live": 62,     
+          "response-size": 1208,                          
+          "ip-address": "8.8.8.8",
+          "probe-success": "",
+          "rtt": 644
+        },
+        {
+          "date-determined": 1439961690,
+          "probe-index": 3,
+          "sequence-number": 2,
+          "time-to-live": 62,     
+          "response-size": 1208,          
+          "ip-address": "8.8.8.8",
+          "probe-success": "",
+          "rtt": 681
+        },
+        {
+          "date-determined": 1447350767,
+          "probe-index": 4,
+          "sequence-number": 3,
+          "time-to-live": 62,     
+          "response-size": 1208,          
+          "ip-address": "8.8.8.8",
+          "probe-success": "",
+          "rtt": 645
+        },
+        {
+          "date-determined": 1447350768,
+          "probe-index": 5,
+          "sequence-number": 4,
+          "time-to-live": 62,     
+          "response-size": 1208,          
+          "ip-address": "8.8.8.8",
+          "probe-success": "",
+          "rtt": 686
+        }
+  ], 
+  "probe-results-summary" : {
+      "probes-sent": 5,
+      "responses-received": 5,
+      "packet-loss": 0,
+      "rtt-minimum": 644,
+      "rtt-maximum": 690,
+      "rtt-average": 669,
+      "rtt-stddev": 20            
+  }
+}

@@ -1,0 +1,6 @@
+PING 8.8.8.8 (8.8.8.8): 1200 data bytes
+1208 bytes from 8.8.8.8: icmp_seq=0 ttl=62 time=0.690 ms
+1208 bytes from 8.8.8.8: icmp_seq=1 ttl=62 time=0.644 ms
+1208 bytes from 8.8.8.8: icmp_seq=2 ttl=62 time=0.681 ms
+1208 bytes from 8.8.8.8: icmp_seq=3 ttl=62 time=0.645 ms
+1208 bytes from 8.8.8.8: icmp_seq=4 ttl=62 time=0.686 ms
